@@ -2,22 +2,25 @@ import {useState} from "react";
 import {styles} from './styles';
 import {createPost} from "../../api/post/post.js";
 import {useNavigate} from "react-router-dom";
-import ToastEditor from "../../module/ToastEditor.jsx";
+import ReactEditorModule from "../../module/ReactEditorModule.jsx";
+import {marked} from "marked";
 
 const WriteBox = () => {
 
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [plainContent, setPlainContent] = useState("");
+  const [editorValue, setEditorValue] = useState("");
   const navigate = useNavigate();
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
 
-  const handleContent = (data) => {
+  const handleContentChange = (data) => {
+    const htmlContent = marked(data);
     const parser = new DOMParser();
-    const doc = parser.parseFromString(data, "text/html");
+    const doc = parser.parseFromString(htmlContent, "text/html");
     const textContent = doc.body.textContent || "";
     setContent(data);
     setPlainContent(textContent);
@@ -51,7 +54,13 @@ const WriteBox = () => {
             <styles.TitleInput onChange={handleTitleChange}/>
           </span>
           <h3>Content</h3>
-          <ToastEditor setContent={handleContent}/>
+          <ReactEditorModule
+            value={editorValue}
+            onChange={(value) => {
+              setEditorValue(value);
+              handleContentChange(value);
+            }}/>
+
           <div style={{display: "flex", justifyContent: "flex-end", paddingTop: "1rem"}}>
             <styles.SubmitButton onClick={handleSubmit}>Write</styles.SubmitButton>
           </div>

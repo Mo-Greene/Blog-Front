@@ -1,7 +1,7 @@
-import ContentsViewer from "../../module/ContentsViewer.jsx";
 import PropTypes from "prop-types";
 import {styles} from './styles.js';
 import {Helmet} from "react-helmet";
+import MDEditor from "@uiw/react-md-editor";
 
 const DetailBox = ({data}) => {
 
@@ -12,8 +12,10 @@ const DetailBox = ({data}) => {
       </Helmet>
       <styles.Heading>{data.title}</styles.Heading>
       <styles.HeadingSub>{data.createdAt} - {data.tagName}</styles.HeadingSub>
-      <div>
-        <ContentsViewer contents={data.content} />
+      <div className="markdownDiv" data-color-mode="dark" style={{padding: 15}}>
+        <MDEditor.Markdown
+          source={data.content}
+        />
       </div>
     </>
   )
