@@ -1,23 +1,23 @@
 import PropTypes from "prop-types";
 import {styles} from './styles.js';
-import {Helmet} from "react-helmet";
+import {Helmet, HelmetProvider} from 'react-helmet-async';
 import MDEditor from "@uiw/react-md-editor";
 
 const DetailBox = ({data}) => {
 
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>{data.title}</title>
       </Helmet>
       <styles.Heading>{data.title}</styles.Heading>
       <styles.HeadingSub>{data.createdAt} - {data.tagName}</styles.HeadingSub>
-      <div className="markdownDiv" data-color-mode="dark" style={{padding: 15}}>
+      <styles.MarkdownDiv data-color-mode="dark">
         <MDEditor.Markdown
           source={data.content}
         />
-      </div>
-    </>
+      </styles.MarkdownDiv>
+    </HelmetProvider>
   )
 }
 

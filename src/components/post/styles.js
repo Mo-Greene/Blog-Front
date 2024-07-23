@@ -41,4 +41,21 @@ export const styles = {
       font-weight: bold;
       color: #777;
   `,
+
+  MarkdownDiv: styled.div`
+      padding-top: 2rem;
+      
+      .wmde-markdown {
+          background-color: #2b2b2b;
+          color: #f8f8f2;
+          
+          h1 {
+              border-bottom: 0;
+          }
+          
+          h2 {
+              border-bottom: 0;
+          }
+      }
+  `,
 }

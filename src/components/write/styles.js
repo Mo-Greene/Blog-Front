@@ -43,5 +43,28 @@ export const styles = {
           opacity: 0.5;
           background: #555555;
       }
+  `,
+
+  StyledSelect: styled.select`
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #444;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+      background-color: #2b2b2b;
+      color: white;
+      outline: none;
+      transition: border 0.2s ease;
+
+      &:focus {
+          border: 1px solid #777;
+      }
+  `,
+
+  StyledOption: styled.option`
+    background-color: #2b2b2b;
+    color: white;
   `
 }
