@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom"
 import {styles} from './styles.js'
-import { FaGithub } from "react-icons/fa6";
+import {ReactComponent as GithubIcon} from '../../assets/github-mark-white.svg';
 
 const Header = () => {
 
@@ -18,8 +18,8 @@ const Header = () => {
               href="https://github.com/Mo-Greene"
               target="_blank"
               rel="noopener noreferrer"
-            ><FaGithub style={{marginRight: "3px"}} />
-              GitHub
+            >
+              <GithubIcon />
             </styles.GithubLink>
           </styles.Nav>
         </div>
