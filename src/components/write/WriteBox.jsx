@@ -2,9 +2,9 @@ import {useState} from "react";
 import {styles} from './styles';
 import {createPost} from "../../api/post/post.js";
 import {useNavigate} from "react-router-dom";
-import ReactEditorModule from "../../module/ReactEditorModule.jsx";
 import {marked} from "marked";
 import TagSelector from "./TagSelector.jsx";
+import MDEditorModule from "../../module/editor/MDEditorModule.jsx";
 
 const WriteBox = () => {
 
@@ -13,6 +13,7 @@ const WriteBox = () => {
   const [plainContent, setPlainContent] = useState("");
   const [editorValue, setEditorValue] = useState("");
   const [selectedTag, setSelectedTag] = useState(null);
+  const [thumbnail, setThumbnail] = useState(null);
   const navigate = useNavigate();
 
   /**
@@ -37,18 +38,29 @@ const WriteBox = () => {
   }
 
   /**
+   * 썸네일 작성
+   * @param e
+   */
+  const handleThumbnailChange = (e) => {
+    setThumbnail(e.target.files[0]); // 파일 선택 처리
+  };
+
+  /**
    * 등록 버튼
    * @returns {Promise<void>}
    */
   const handleSubmit = async () => {
-    const postData = {
-      title: title,
-      content: content,
-      plainContent: plainContent,
-      tagId: selectedTag
-    };
 
-    const response = await createPost(postData);
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("content", content);
+    formData.append("plainContent", plainContent);
+    formData.append("tagId", selectedTag);
+    if (thumbnail) {
+      formData.append("thumbnail", thumbnail);
+    }
+
+    const response = await createPost(formData);
     if (response.data.result === "SUCCESS") {
       alert("게시글 등록")
       navigate("/posts")
@@ -73,13 +85,17 @@ const WriteBox = () => {
           </span>
 
           <h3>Content</h3>
-          <ReactEditorModule
+          <MDEditorModule
             value={editorValue}
             onChange={(value) => {
               setEditorValue(value);
               handleContentChange(value);
             }}
+            setEditorValue={setEditorValue}
           />
+
+          <h3>Thumbnail</h3>
+          <input type="file" accept="image/*" onChange={handleThumbnailChange} />
 
           <div style={{display: "flex", justifyContent: "flex-end", paddingTop: "1rem"}}>
             <styles.SubmitButton onClick={handleSubmit}>Write</styles.SubmitButton>

@@ -25,10 +25,14 @@ export const findPostDetail = async (postId) => {
 
 /**
  * 게시글 등록
- * @param data
+ * @param formData
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
-export const createPost = async (data) => {
+export const createPost = async (formData) => {
 
-  return await client.post(URLS.blog, data);
+  return await client.post(URLS.blog, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
 }

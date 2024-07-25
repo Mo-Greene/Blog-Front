@@ -8,11 +8,12 @@ export const styles = {
       padding: 10px 0;
       display: flex;
       align-items: center;
-      transition: background-color 0.3s, box-shadow 0.3s;
+      transition: transform 0.2s ease 0s, background-color 0.3s, box-shadow 0.3s;
 
       &:hover {
           background-color: rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+          transform: scale(1.05);
       }
   `,
 
