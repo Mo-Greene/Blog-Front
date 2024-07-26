@@ -1,6 +1,6 @@
 import {NavLink} from "react-router-dom"
 import {styles} from './styles.js'
-import {ReactComponent as GithubIcon} from '../../assets/github-mark-white.svg';
+import {ReactComponent as GithubIcon} from '../../../assets/github-mark-white.svg';
 
 const Header = () => {
 

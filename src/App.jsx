@@ -1,11 +1,12 @@
 import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom";
-import Header from "./components/header/Header.jsx";
+import Header from "./components/layout/header/Header.jsx";
 import Post from "./pages/post/index.jsx";
 import About from "./pages/about/index.jsx";
 import './App.css';
 import MainLayout from "./layouts/MainLayout.jsx";
 import PostDetail from "./pages/postDetail/index.jsx";
 import Write from "./pages/write/index.jsx";
+import Footer from "./components/layout/footer/Footer.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/write" element={<Write />} />
           </Routes>
+          <Footer />
         </MainLayout>
       </Router>
     </>

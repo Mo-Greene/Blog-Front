@@ -5,7 +5,7 @@ export const styles = {
 
   Box: styled.div`
       border-bottom: 1px solid #444;
-      padding: 10px 0;
+      padding: 1rem;
       display: flex;
       align-items: center;
       transition: transform 0.2s ease 0s, background-color 0.3s, box-shadow 0.3s;

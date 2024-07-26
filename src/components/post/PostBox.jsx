@@ -5,7 +5,7 @@ const PostBox = ({ data }) => {
 
   return (
     <>
-      <h1>Posting</h1>
+      <h1 style={{padding: "1rem"}}>Posting</h1>
       {data.map((post) => (
         <styles.Box key={post.id}>
           <div style={{flex: 1}}>
