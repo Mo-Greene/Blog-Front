@@ -8,9 +8,9 @@ const URLS = {
  * 게시글 전체 조회
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
-export const getPostList = async () => {
+export const getPostList = async (params) => {
 
-  return await client.get(URLS.blog);
+  return await client.get(URLS.blog, { params });
 }
 
 /**

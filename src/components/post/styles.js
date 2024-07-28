@@ -4,7 +4,9 @@ import {Link} from "react-router-dom";
 export const styles = {
 
   Box: styled.div`
-      border-bottom: 1px solid #444;
+      max-width: 60%;
+      margin: 0 auto;
+      border-bottom: 1px solid lightgray;
       padding: 1rem;
       display: flex;
       align-items: center;
@@ -13,7 +15,8 @@ export const styles = {
       &:hover {
           background-color: rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-          transform: scale(1.05);
+          transform: scale(1.02);
+          border-radius: 10px;
       }
   `,
 
@@ -27,10 +30,24 @@ export const styles = {
       width: 150px;
       height: 150px;
       object-fit: cover;
-      border-radius: 20%;
+      border-radius: 10%;
+  `,
+
+  TitleBoxDiv: styled.div`
+      background-color: #151515;
+      display: flex;
+      padding: 2rem;
+  `,
+
+  TitleDiv: styled.div`
+      max-width: 80%;
+      width: 50%;
+      margin: auto;
+      text-align: left;
   `,
 
   Heading: styled.div`
+      color: white;
       margin-top: 2rem;
       font-size: xxx-large;
       font-weight: bold;
@@ -44,19 +61,26 @@ export const styles = {
   `,
 
   MarkdownDiv: styled.div`
-      padding-top: 2rem;
+      padding-top: 4rem;
+      max-width: 60%;
+      margin: auto;
       
       .wmde-markdown {
-          background-color: #2b2b2b;
-          color: #f8f8f2;
-          
           h1 {
               border-bottom: 0;
           }
-          
           h2 {
               border-bottom: 0;
           }
       }
+  `,
+
+  SearchInput: styled.input`
+    border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 0.5rem;
+      text-align: center;
+      outline: none;
+      font-size: large;
   `,
 }

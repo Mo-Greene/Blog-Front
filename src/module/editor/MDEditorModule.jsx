@@ -6,7 +6,7 @@ const MDEditorModule = ({ value, onChange, setEditorValue }) => {
 
   return (
     <div className="markarea">
-      <div data-color-mode="dark">
+      <div data-color-mode="light">
         <MDEditor height={600}
                   highlightEnable={true}
                   hideToolbar

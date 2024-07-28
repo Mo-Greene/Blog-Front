@@ -6,18 +6,27 @@ import MDEditor from "@uiw/react-md-editor";
 const DetailBox = ({data}) => {
 
   return (
-    <HelmetProvider>
-      <Helmet>
-        <title>{data.title}</title>
-      </Helmet>
-      <styles.Heading>{data.title}</styles.Heading>
-      <styles.HeadingSub>{data.createdAt} - {data.tagName}</styles.HeadingSub>
-      <styles.MarkdownDiv data-color-mode="dark">
-        <MDEditor.Markdown
-          source={data.content}
-        />
-      </styles.MarkdownDiv>
-    </HelmetProvider>
+    <>
+      <HelmetProvider>
+        <Helmet>
+          <title>{data.title}</title>
+        </Helmet>
+
+        <styles.TitleBoxDiv>
+          <styles.TitleDiv>
+            <styles.Heading>{data.title}</styles.Heading>
+            <styles.HeadingSub>{data.createdAt} - {data.tagName}</styles.HeadingSub>
+          </styles.TitleDiv>
+        </styles.TitleBoxDiv>
+
+        <styles.MarkdownDiv data-color-mode="light">
+          <MDEditor.Markdown
+            source={data.content}
+          />
+        </styles.MarkdownDiv>
+
+      </HelmetProvider>
+    </>
   )
 }
 
