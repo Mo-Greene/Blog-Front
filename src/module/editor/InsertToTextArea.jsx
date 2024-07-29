@@ -1,21 +1,10 @@
-const InsertToTextArea = (insertString) => {
+const InsertToTextArea = (insertString, currentMarkdown = "") => {
 
-  const textarea = document.createElement("textarea");
-  if (!textarea) {
-    return null;
-  }
+  const pos = currentMarkdown.length;
+  const front = currentMarkdown.slice(0, pos);
+  const back = currentMarkdown.slice(pos);
 
-  let sentence = textarea.value;
-  const len = sentence.length;
-  const pos = textarea.selectionStart;
-  const end = textarea.selectionEnd;
-
-  const front = sentence.slice(0, pos);
-  const back = sentence.slice(pos, len);
-
-  sentence = front + insertString + back;
-  textarea.value = sentence;
-  textarea.selectionEnd = end + insertString.length;
+  const sentence = front + insertString + back;
 
   return sentence;
 };

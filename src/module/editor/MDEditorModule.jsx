@@ -4,6 +4,8 @@ import onImagePasted from "./OnImagePasted.jsx";
 
 const MDEditorModule = ({ value, onChange, setEditorValue }) => {
 
+  const getEditorValue = () => value;
+
   return (
     <div className="markarea">
       <div data-color-mode="light">
@@ -13,10 +15,10 @@ const MDEditorModule = ({ value, onChange, setEditorValue }) => {
                   value={value}
                   onChange={onChange}
                   onPaste={async (event) => {
-                    await onImagePasted(event.clipboardData, setEditorValue)
+                    await onImagePasted(event.clipboardData, getEditorValue, setEditorValue)
                   }}
                   onDrop={ async (event) => {
-                    await onImagePasted(event.dataTransfer, setEditorValue)
+                    await onImagePasted(event.dataTransfer, getEditorValue, setEditorValue)
                   }}
         />
       </div>
