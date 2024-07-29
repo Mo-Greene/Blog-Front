@@ -83,4 +83,19 @@ export const styles = {
       outline: none;
       font-size: large;
   `,
+
+  UiDivTag: styled.div`
+      display: flex;
+      justify-content: center;
+      margin: 3rem;
+  `,
+
+  LoadMore: styled.button`
+      background: none;
+      border: none;
+      padding: 1rem 5rem;
+      font-size: 1rem;
+      color: gray;
+      cursor: pointer;
+  `,
 }

@@ -11,8 +11,6 @@ export const styles = {
       border-radius: 0;
       margin-bottom: 1rem;
       box-sizing: border-box;
-      background-color: #2b2b2b;
-      color: white;
       outline: none;
       transition: border-bottom 0.2s ease;
       
@@ -53,8 +51,6 @@ export const styles = {
       border-radius: 4px;
       margin-bottom: 1rem;
       box-sizing: border-box;
-      background-color: #2b2b2b;
-      color: white;
       outline: none;
       transition: border 0.2s ease;
 

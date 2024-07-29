@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {useState} from "react";
 import LoadingSpinner from "../ui/LoadingSpinner.jsx";
 
-const PostBox = ({data, onSearch, isLoading}) => {
+const PostBox = ({data, onSearch, isLoading, handleLoadMore}) => {
 
   const [placeholder, setPlaceholder] = useState("Search Title..");
   const [title, setTitle] = useState("");
@@ -21,11 +21,7 @@ const PostBox = ({data, onSearch, isLoading}) => {
 
   return (
     <>
-      <div style={{
-        display: "flex",
-        justifyContent: "center",
-        margin: "3rem"
-      }}>
+      <styles.UiDivTag>
         <styles.SearchInput
           placeholder={placeholder}
           value={title}
@@ -34,7 +30,7 @@ const PostBox = ({data, onSearch, isLoading}) => {
           onFocus={() => setPlaceholder("")}
           onBlur={() => setPlaceholder("Search Title..")}
         />
-      </div>
+      </styles.UiDivTag>
 
       {/*화면 로딩*/}
       {isLoading ? (
@@ -61,6 +57,10 @@ const PostBox = ({data, onSearch, isLoading}) => {
           </styles.Box>
         ))
       )}
+      
+      <styles.UiDivTag>
+        <styles.LoadMore onClick={handleLoadMore}>More</styles.LoadMore>
+      </styles.UiDivTag>
     </>
   )
 }
@@ -77,6 +77,7 @@ PostBox.propTypes = {
   })).isRequired,
   onSearch: PropTypes.func,
   isLoading: PropTypes.bool,
+  handleLoadMore: PropTypes.func,
 };
 
 export default PostBox;
