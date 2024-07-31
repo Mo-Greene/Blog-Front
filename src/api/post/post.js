@@ -5,6 +5,15 @@ const URLS = {
 };
 
 /**
+ * 게시글 최근 목록 조회
+ * @returns {Promise<axios.AxiosResponse<any>>}
+ */
+export const getLatestPost = async () => {
+
+  return await client.get(URLS.blog + "/latest")
+}
+
+/**
  * 게시글 전체 조회
  * @returns {Promise<axios.AxiosResponse<any>>}
  */

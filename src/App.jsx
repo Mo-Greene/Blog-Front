@@ -6,6 +6,7 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import PostDetail from "./pages/postDetail/index.jsx";
 import Write from "./pages/write/index.jsx";
 import Footer from "./components/layout/footer/Footer.jsx";
+import Main from "./pages/main/index.jsx";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <ConditionalHeader />
         <MainLayout>
           <Routes>
-            <Route path="/" element={<h1>what?</h1>} />
+            <Route path="/" element={<Main />} />
             <Route path="/posts" element={<Post />} />
             <Route path="/posts/:postId" element={<PostDetail />} />
             <Route path="/write" element={<Write />} />

@@ -1,7 +1,7 @@
 import {styles} from "./styles.js"
 import PropTypes from "prop-types";
 import {useState} from "react";
-import LoadingSpinner from "../ui/LoadingSpinner.jsx";
+import PostList from "./PostList.jsx";
 
 const PostBox = ({data, onSearch, isLoading, handleLoadMore}) => {
 
@@ -32,32 +32,8 @@ const PostBox = ({data, onSearch, isLoading, handleLoadMore}) => {
         />
       </styles.UiDivTag>
 
-      {/*화면 로딩*/}
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : data.length === 0 ? (
-        <div style={{textAlign: "center", color: "gray"}}>조회되는 결과가 없습니다.</div>
-      ) : (
-        data.map((post) => (
-          <styles.Box key={post.id}>
-            <div style={{flex: 1}}>
-              <styles.StyledLink to={`/posts/${post.id}`}>
-                <h2 style={{marginTop: "0px"}}>{post.title}</h2>
-                <p style={{color: "gray"}}>{post.preview}</p>
-              </styles.StyledLink>
-              <small style={{color: "gray"}}>{post.createdAt} | {post.tagName}</small>
-            </div>
-            {post.thumbnail && (
-              <div>
-                <styles.StyledLink to={`/posts/${post.id}`}>
-                  <styles.Image src={post.thumbnail} alt={post.title}/>
-                </styles.StyledLink>
-              </div>
-            )}
-          </styles.Box>
-        ))
-      )}
-      
+      <PostList data={data} isLoading={isLoading} />
+
       <styles.UiDivTag>
         <styles.LoadMore onClick={handleLoadMore}>More</styles.LoadMore>
       </styles.UiDivTag>
