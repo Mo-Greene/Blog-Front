@@ -7,6 +7,7 @@ import PostDetail from "./pages/postDetail/index.jsx";
 import Write from "./pages/write/index.jsx";
 import Footer from "./components/layout/footer/Footer.jsx";
 import Main from "./pages/main/index.jsx";
+import Login from "./pages/login/index.jsx";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/posts" element={<Post />} />
             <Route path="/posts/:postId" element={<PostDetail />} />
             <Route path="/write" element={<Write />} />
+            <Route path={"/login"} element={<Login />} />
           </Routes>
           <Footer />
         </MainLayout>
