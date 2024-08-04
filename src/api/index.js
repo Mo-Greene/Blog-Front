@@ -11,4 +11,17 @@ export const client = axios.create({
     "Access-Control-Allow-Origin": "*",
   },
   responseType: "json",
-})
+});
+
+client.interceptors.request.use(
+  config => {
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  error => {
+    return Promise.reject(error);
+  }
+);
