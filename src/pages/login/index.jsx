@@ -1,16 +1,20 @@
 import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-import { styles } from './styles';
+import {styles} from './styles';
 
 const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
+    const loginSuccess = query.get("login");
     const accessToken = query.get('access_token');
 
-    if (accessToken) {
+    if (loginSuccess === 'true' && accessToken) {
       localStorage.setItem('access_token', accessToken);
+      navigate('/');
+    } else if (loginSuccess === 'false') {
+      alert('관리자 회원이 아닙니다.')
       navigate('/');
     }
   }, [navigate]);
