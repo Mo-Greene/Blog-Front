@@ -31,6 +31,7 @@ export const styles = {
       a {
           font-weight: bold;
           text-decoration: none;
+          color: black;
       }
   `,
 
