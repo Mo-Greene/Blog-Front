@@ -5,6 +5,8 @@ const URLS = {
   file: "/files",
 };
 
+const CDN_BASE_URL = import.meta.env.VITE_CDN_BASE_URL;
+
 /**
  * 프리사인드 url 조회
  * @returns {Promise<axios.AxiosResponse<any>>}
@@ -43,9 +45,10 @@ export const fileUpload = async (file) => {
   try {
     const presignedUrl = await getPresignedUrl();
     await uploadToS3(file, presignedUrl);
+    const s3Url = new URL(presignedUrl.split('?')[0]);
+    const objectKey = s3Url.pathname.substring(1);
 
-    const result = presignedUrl.split('?')[0];
-    return result;
+    return `${CDN_BASE_URL}/${objectKey}`;
   } catch (error) {
     console.error('Error during file upload:', error);
     throw error;

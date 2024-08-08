@@ -7,6 +7,7 @@ import { MdExpandLess, MdExpandMore } from "react-icons/md";
 const MainBox = ({data, isLoading}) => {
 
   const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
+  const cdnBaseUrl = import.meta.env.VITE_CDN_BASE_URL;
 
   const toggleAdditionalInfo = () => {
     setShowAdditionalInfo(!showAdditionalInfo);
@@ -15,7 +16,7 @@ const MainBox = ({data, isLoading}) => {
   return (
     <>
       <styles.ProfileContainer>
-        <styles.ProfileImage src={"src/assets/장현석.png"} alt="Profile Image"/>
+        <styles.ProfileImage src={`${cdnBaseUrl}/장현석.png`} alt="Profile Image"/>
         <styles.ProfileName>Mo-Greene</styles.ProfileName>
         <styles.ProfileBio>👋 I'm Backend developer using Java & SpringBoot, constantly striving to improve my code.
         </styles.ProfileBio>
