@@ -13,7 +13,7 @@ export const styles = {
       box-sizing: border-box;
       outline: none;
       transition: border-bottom 0.2s ease;
-      
+
       &:focus {
           border-bottom: 3px solid #444;
       }
@@ -60,7 +60,7 @@ export const styles = {
   `,
 
   StyledOption: styled.option`
-    background-color: #2b2b2b;
-    color: white;
-  `
+      background-color: #2b2b2b;
+      color: white;
+  `,
 }

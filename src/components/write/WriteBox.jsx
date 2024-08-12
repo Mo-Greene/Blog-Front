@@ -5,6 +5,7 @@ import {useNavigate} from "react-router-dom";
 import {marked} from "marked";
 import TagSelector from "./TagSelector.jsx";
 import MDEditorModule from "../../module/editor/MDEditorModule.jsx";
+import styled from "styled-components";
 
 const WriteBox = () => {
 
@@ -95,7 +96,24 @@ const WriteBox = () => {
           />
 
           <h3>Thumbnail</h3>
-          <input type="file" accept="image/*" onChange={handleThumbnailChange} />
+          <FileUploadLabel htmlFor="file-upload">
+            <UploadIcon
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+              <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+            </UploadIcon>
+            Upload File
+            <FileInput id="file-upload" type="file" accept="image/*" onChange={handleThumbnailChange} />
+          </FileUploadLabel>
 
           <div style={{display: "flex", justifyContent: "flex-end", paddingTop: "1rem"}}>
             <styles.SubmitButton onClick={handleSubmit}>Write</styles.SubmitButton>
@@ -105,5 +123,38 @@ const WriteBox = () => {
     </>
   )
 }
+
+const FileUploadLabel = styled.label`
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.375rem;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff; /* Primary foreground color */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #0d1117; /* Slightly darker primary color */
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+  }
+`;
+
+const UploadIcon = styled.svg`
+  margin-right: 0.5rem;
+  height: 1.25rem;
+  width: 1.25rem;
+`;
+
+const FileInput = styled.input`
+  display: none;
+`;
 
 export default WriteBox;
