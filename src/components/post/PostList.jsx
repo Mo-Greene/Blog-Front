@@ -8,7 +8,7 @@ const PostList = ({data, isLoading}) => {
       {isLoading ? (
         <LoadingSpinner />
       ) : data.length === 0 ? (
-        <div style={{textAlign: "center", color: "gray"}}>조회되는 결과가 없습니다.</div>
+        <div style={{textAlign: "center", color: "gray", margin: "auto"}}>조회되는 결과가 없습니다.</div>
       ) : (
         data.map((post) => (
           <styles.Box key={post.id}>
