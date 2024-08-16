@@ -2,7 +2,7 @@ import MDEditor from "@uiw/react-md-editor";
 import PropTypes from "prop-types";
 import onImagePasted from "./OnImagePasted.jsx";
 
-const MDEditorModule = ({ value, onChange, setEditorValue }) => {
+const MDEditorModule = ({value, onChange, setEditorValue}) => {
 
   const getEditorValue = () => value;
 
@@ -17,7 +17,7 @@ const MDEditorModule = ({ value, onChange, setEditorValue }) => {
                   onPaste={async (event) => {
                     await onImagePasted(event.clipboardData, getEditorValue, setEditorValue)
                   }}
-                  onDrop={ async (event) => {
+                  onDrop={async (event) => {
                     await onImagePasted(event.dataTransfer, getEditorValue, setEditorValue)
                   }}
         />

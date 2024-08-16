@@ -37,5 +37,25 @@ export const styles = {
 
   GithubLink: styled.a`
       margin-left: auto;
-  `
+  `,
+
+  WriteButton: styled.div`
+      margin-left: 20px;
+
+      a {
+          display: inline-block;
+          padding: 8px 16px;
+          border-radius: 8px;
+          text-decoration: none;
+          color: white;
+          background-color: #555;
+          font-weight: bold;
+          transition: background-color 0.3s, transform 0.3s;
+
+          &:hover {
+              background-color: #333;
+              transform: scale(1.05);
+          }
+      }
+  `,
 };

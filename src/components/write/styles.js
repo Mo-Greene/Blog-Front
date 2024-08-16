@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const styles = {
 
+  Container: styled.div`
+      max-width: 60%;
+      margin: 0 auto;
+      padding: 1rem;
+  `,
+
   TitleInput: styled.input`
       width: 100%;
       padding: 0.5rem;
@@ -27,7 +33,7 @@ export const styles = {
       font-size: 1rem;
       padding: var(--button-padding, 12px 16px);
       border-radius: 8px;
-      background: #555555;
+      background: #000000;
       color: #ffffff;
 
       &:active,
