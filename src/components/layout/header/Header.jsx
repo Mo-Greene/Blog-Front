@@ -11,7 +11,7 @@ const Header = () => {
     if (token) {
       setIsLoggedIn(true);
     }
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <>

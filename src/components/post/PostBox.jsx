@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {useState} from "react";
 import PostList from "./PostList.jsx";
 
-const PostBox = ({data, onSearch, isLoading, handleLoadMore}) => {
+const PostBox = ({data, onSearch, isLoading}) => {
 
   const [placeholder, setPlaceholder] = useState("Search Title..");
   const [title, setTitle] = useState("");
@@ -33,10 +33,6 @@ const PostBox = ({data, onSearch, isLoading, handleLoadMore}) => {
       </styles.UiDivTag>
 
       <PostList data={data} isLoading={isLoading} />
-
-      <styles.UiDivTag>
-        <styles.LoadMore onClick={handleLoadMore}>More</styles.LoadMore>
-      </styles.UiDivTag>
     </>
   )
 }
@@ -53,7 +49,6 @@ PostBox.propTypes = {
   })).isRequired,
   onSearch: PropTypes.func,
   isLoading: PropTypes.bool,
-  handleLoadMore: PropTypes.func,
 };
 
 export default PostBox;
