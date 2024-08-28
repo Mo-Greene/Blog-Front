@@ -1,5 +1,5 @@
 import PostBox from "../../components/post/PostBox.jsx";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 import {getPostList} from "../../api/post/post.js";
 import {useSearchParams} from "react-router-dom";
 
@@ -11,8 +11,7 @@ const Post = () => {
 
   const searchParam = {
     title: searchParams.get("title") || "",
-    tagId: searchParams.get("tagId") || "",
-    lastIndex: searchParams.get("lastIndex") || "",
+    tagId: searchParams.get("tagId") || ""
   }
 
   /**
@@ -23,11 +22,16 @@ const Post = () => {
     setIsLoading(true);
 
     const response = await getPostList(searchParam);
+
     setData(response.data.data);
 
     setIsLoading(false);
   }
 
+  /**
+   * 검색조건
+   * @param newParams
+   */
   const handleSearch = (newParams) => {
     const updatedParams = new URLSearchParams(searchParams);
     Object.entries(newParams).forEach(([key, value]) => {
@@ -45,8 +49,7 @@ const Post = () => {
   }
 
   useEffect(() => {
-    const append = searchParams.get("lastIndex") !== null;
-    getPost(append);
+    getPost();
   }, [searchParams]);
 
   return (
