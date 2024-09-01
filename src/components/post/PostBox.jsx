@@ -46,6 +46,7 @@ PostBox.propTypes = {
     createdAt: PropTypes.string.isRequired,
     tagId: PropTypes.number,
     tagName: PropTypes.string,
+    slug: PropTypes.string,
   })).isRequired,
   onSearch: PropTypes.func,
   isLoading: PropTypes.bool,

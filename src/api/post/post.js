@@ -24,12 +24,12 @@ export const getPostList = async (params) => {
 
 /**
  * 게시글 상세 조회
- * @param postId
+ * @param postSlug
  * @returns {Promise<axios.AxiosResponse<any>>}
  */
-export const findPostDetail = async (postId) => {
+export const findPostDetail = async (postSlug) => {
   
-  return await client.get(URLS.blog + `/${postId}`)
+  return await client.get(URLS.blog + `/${postSlug}`)
 }
 
 /**

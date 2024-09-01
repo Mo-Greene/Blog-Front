@@ -6,7 +6,7 @@ import LoadingSpinner from "../../components/ui/LoadingSpinner.jsx";
 
 const PostDetail = () => {
 
-  const {postId} = useParams();
+  const {slug} = useParams();
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -16,7 +16,7 @@ const PostDetail = () => {
    */
   const findPost = async () => {
     setIsLoading(true);
-    const response = await findPostDetail(postId);
+    const response = await findPostDetail(slug);
     setData(response.data.data);
     setIsLoading(false);
   }
