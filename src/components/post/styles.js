@@ -81,7 +81,7 @@ export const styles = {
   `,
 
   SearchInput: styled.input`
-    border: none;
+      border: none;
       border-bottom: 1px solid #ccc;
       padding: 0.5rem;
       text-align: center;
