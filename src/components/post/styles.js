@@ -72,6 +72,11 @@ export const styles = {
           h2 {
               border-bottom: 0;
           }
+          font-size: 19px;
+          font-family: Pretendard-Regular;
+          padding: 1rem;
+          border-radius: 8px;
+          background-color: #f5f5f5;
       }
   `,
 

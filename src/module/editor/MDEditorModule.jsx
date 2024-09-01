@@ -8,10 +8,22 @@ const MDEditorModule = ({value, onChange, setEditorValue}) => {
 
   return (
     <div className="markarea">
+
+      <style>{`
+          .w-md-editor-text-input,
+          .w-md-editor-text-pre .code-line {
+              font-size: 1.3rem !important;
+              line-height: 1.5rem !important;
+          }
+
+          .w-md-editor-text-pre .code-line {
+              display: block;
+          }
+      `}
+      </style>
+
       <div data-color-mode="light">
         <MDEditor height={600}
-                  highlightEnable={true}
-                  hideToolbar
                   value={value}
                   onChange={onChange}
                   onPaste={async (event) => {

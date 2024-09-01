@@ -69,4 +69,45 @@ export const styles = {
       background-color: #2b2b2b;
       color: white;
   `,
+
+  FileUploadLabel: styled.label`
+      display: inline-flex;
+      align-items: center;
+      border-radius: 0.375rem;
+      background-color: black;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #fff; /* Primary foreground color */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+          background-color: #0d1117; /* Slightly darker primary color */
+      }
+
+      &:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+      }
+  `,
+
+  UploadIcon: styled.svg`
+      margin-right: 0.5rem;
+      height: 1.25rem;
+      width: 1.25rem;
+  `,
+
+  FileInput: styled.input`
+      display: none;
+  `,
+
+  ImagePreview: styled.img`
+      margin-left: 10px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10%;
+  `,
 }
