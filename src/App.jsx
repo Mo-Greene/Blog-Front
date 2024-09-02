@@ -1,27 +1,19 @@
-import {BrowserRouter as Router, Route, Routes, useLocation} from "react-router-dom";
+import {BrowserRouter as Router, useLocation} from "react-router-dom";
 import Header from "./components/layout/header/Header.jsx";
-import Post from "./pages/post/index.jsx";
 import './App.css';
 import MainLayout from "./layouts/MainLayout.jsx";
-import PostDetail from "./pages/postDetail/index.jsx";
-import Write from "./pages/write/index.jsx";
 import Footer from "./components/layout/footer/Footer.jsx";
-import Main from "./pages/main/index.jsx";
-import Login from "./pages/login/index.jsx";
+import ScrollToTop from "./components/ScrollToTop.js";
+import {AppRoutes} from "./routes/AppRoute.jsx";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <ConditionalHeader />
         <MainLayout>
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/posts" element={<Post />} />
-            <Route path="/posts/:slug" element={<PostDetail />} />
-            <Route path="/write" element={<Write />} />
-            <Route path={"/login"} element={<Login />} />
-          </Routes>
+          <AppRoutes />
           <Footer />
         </MainLayout>
       </Router>
