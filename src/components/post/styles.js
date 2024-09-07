@@ -96,11 +96,27 @@ export const styles = {
   `,
 
   LoadMore: styled.button`
-      background: none;
-      border: none;
-      padding: 1rem 5rem;
-      font-size: 1rem;
+      background-color: #f5f5f5;
       color: gray;
+      border: none;
+      padding: 10px 20px;
+      margin: 20px auto;
+      display: block;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+          background-color: lightgray;
+      }
+
+      &:focus {
+          outline: none;
+      }
+
+      &:disabled {
+          cursor: not-allowed;
+      }
   `,
 }
