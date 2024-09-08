@@ -38,13 +38,13 @@ const Post = () => {
     window.removeEventListener('scroll', handleScroll);
 
     const response = await getPostList(searchParam);
-    const fetchedPosts = response.data.data;
+    const fetchedPosts = response.data.data.content;
 
     const lastPostId = fetchedPosts.length > 0 ? fetchedPosts[fetchedPosts.length - 1].id : null;
 
     setData((prevData) => [...prevData, ...fetchedPosts]);
     setCursor(lastPostId);
-    setHasMore(fetchedPosts.length > 0);
+    setHasMore(!response.data.data.last);
     setIsLoading(false);
 
     requestAnimationFrame(() => {
