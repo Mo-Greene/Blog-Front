@@ -25,7 +25,7 @@ const MainBox = ({data, isLoading}) => {
         <styles.CardSection>
           <styles.CardTitle>Career</styles.CardTitle>
           <styles.CardList>
-            <styles.CardItem>Iden-it (2023.07 ~ ) - SI Engineer</styles.CardItem>
+            <styles.CardItem>Iden-it (2023.07 ~ 2024.09) - SI Engineer</styles.CardItem>
           </styles.CardList>
         </styles.CardSection>
 
@@ -33,7 +33,7 @@ const MainBox = ({data, isLoading}) => {
           <styles.CardTitle>TechStack</styles.CardTitle>
           <styles.CardList>
             <styles.CardItem>&#8226; Java / Spring Boot</styles.CardItem>
-            <styles.CardItem>&#8226; MySQL / MariaDB / PostgreSQL</styles.CardItem>
+            <styles.CardItem>&#8226; MySQL / PostgreSQL</styles.CardItem>
             <styles.CardItem>&#8226; Mybatis / JPA</styles.CardItem>
             <styles.CardItem>&#8226; Git / GitHub</styles.CardItem>
             <styles.CardItem>&#8226; Jenkins / GitHub Actions</styles.CardItem>
