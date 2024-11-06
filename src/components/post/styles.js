@@ -62,7 +62,7 @@ export const styles = {
 
   MarkdownDiv: styled.div`
       padding-top: 4rem;
-      max-width: 60%;
+      max-width: 50%;
       margin: auto;
       
       .wmde-markdown {
@@ -73,7 +73,7 @@ export const styles = {
               border-bottom: 0;
           }
           font-size: 17px;
-          font-family: Pretendard-Regular;
+          font-family: "Cascadia Code";
           padding: 1rem;
           border-radius: 8px;
           background-color: #f5f5f5;
