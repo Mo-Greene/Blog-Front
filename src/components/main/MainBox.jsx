@@ -26,6 +26,7 @@ const MainBox = ({data, isLoading}) => {
           <styles.CardTitle>Career</styles.CardTitle>
           <styles.CardList>
             <styles.CardItem>Iden-it (2023.07 ~ 2024.09) - SI Engineer</styles.CardItem>
+            <styles.CardItem>WhiteScan (2024.11 ~ ) - Backend Developer</styles.CardItem>
           </styles.CardList>
         </styles.CardSection>
 
